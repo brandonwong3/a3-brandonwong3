@@ -1,0 +1,104 @@
+---
+title: "Assignment 3: Data Visualization (incarceration)"
+author: "Brandon Wong"
+date: November 18, 2020
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r echo=FALSE, include=FALSE}
+
+source("analysis.R")
+
+library(knitr)
+```
+
+
+# Introduction
+In preparation for this assignment on analyzing racism in the United States prison system, I watched the documentary **13th**. This video showed how Black people have historically been unjustly arrested and labeled criminals so that their rights could be taken away. A few recent Presidents declared a _war on drugs_ that put many Blacks in prison. In 1994, mass incarceration was supported by a $30 billion dollar federal crime bill. 
+
+My report focused on analyzing how the 1994 crime bill affected the population of Blacks in the prison system in California.
+
+
+# Values of Significance
+## Value 1:
+In **13th**, it was noted that some Blacks moved away from the South after the abolition of slavery because of racism and violence against them. I thought California would be a good state to analyze because it had a diverse population of many races. California is large geographically, so I concentrated on the county with the highest prison count.
+```{r echo=FALSE}
+ca_highest_county
+```
+
+## Value 2:
+How many Blacks were in the prison population in this county according to the last year of data in the data set?
+```{r echo=FALSE}
+black_ca_latest_prison_pop
+```
+
+## Value 3:
+What was the total prison population (of all races) in this county?
+```{r echo=FALSE}
+total_ca_latest_prison_pop 
+```
+
+## Value 4:
+What was the percent of the prison population was Black?
+```{r echo=FALSE}
+black_ca_latest_prison_pop/total_ca_latest_prison_pop
+```
+
+## Value 5:
+What was the percent of Blacks living in this county?
+```{r echo=FALSE}
+black_ca_popul_ratio
+```
+
+## Value 6: 
+What was the change in percent of Blacks living in this county between the earliest and last year of the data set?
+```{r echo=FALSE}
+black_ca_ratio_popul_change 
+```
+
+## Value 7: 
+What was the change in percent for the Black prison population between the earliest and last year of the data set?
+```{r echo=FALSE}
+black_ca_ratio_prison_change
+```
+
+
+
+# Trends over time chart
+The first chart shows the the Top 5 prison populations by county in the state of California. I assumed there would be other prisons with similar populations counts as Los Angles County. I was very surprised to see that the prison with the 2nd-5th highest prison populations were substantially lower in prison count. 
+
+```{r echo=FALSE, message=FALSE}
+top5_prison_plot
+```
+
+
+What I observed is that the prison population for Blacks in the largest prison in Los Angeles County followed the same pattern as was described in **13th**. There was a increase in Blacks in prison in the largest county through the 1990's supported by a increase investment in building prisons  and perhaps by an increase of incarceration of Blacks. The Black prison populations in the other top counties maintained a flatter growth curve and did not increase as quickly as the largest county prison.
+
+I was surprised to see the Black prison population starting to decrease in 2008. If we had only compared the prison population from the earliest available data to the latest, without the chart, one might have assumed there was a steady decline over 25 years. But, a chart shows that there was a marked increase and then a decrease in the Black prison population during this 25 year time period. Without the chart, we would not have seen the changes in Black incarceration over this interval. 
+
+
+# Variable comparison chart
+
+Jail capacity was charted for the largest county prison system in California. The Black prison population increased in line with the jail capacity. The Latinx prison population grew similar to the Blacks. The White prison population grew marginally, and started to steadily decline in as early as 1999. When the Latinx prison population kept rising between 2004-2007, the Black population level flattened while the White population decreased signaling that perhaps the prison system was at capacity.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+compare_prison_pop
+```
+
+Of note is that the prison capacity leveled off at 25,000 in 2003. Adding the numbers, one can see that the inmate count had exceeded the capacity for almost the entire duration of the chart. It would seem that there has been effort to reduce the prison count to get it closer to prison capacity. It is not clear whether the reduction in prison population occurred from relief in the prison system, court system or changes in policing.
+
+
+# Map
+
+This map of all the counties in California shows the percentage of Blacks in the prison population in each county. Since I chose to work mainly with the county that had the highest number of Blacks in prison, I wanted to see if the incarceration of Blacks was similar in other counties. To my surprise, the county with with the highest prison count of Blacks actually had a low percentage of Blacks living there. The highest percentage of Blacks in prison were actually in Northern California to the East of San Francisco Bay. This might be the next place to focus further data analysis on as to why the percentage population of Blacks in prison is higher there.
+
+```{r echo=FALSE}
+ca_county_makeup_map
+```
+
+This map revealed to me that data from the Alameda region could be analyzed to better understand if racism against Blacks is more prevalent there because the percentage of the prison populations is the highest in this county. I learned that an area with the highest population of data to work with, Los Angeles County, was not necessarily be the best representative sample to base the work upon. I learned that through iterative analysis, we should expect to change how, what and where to research as we search for patterns in the data to support our work.
+
