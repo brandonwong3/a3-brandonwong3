@@ -1,6 +1,6 @@
 # Assignment #3
 # Brandon Wong
-# November 18, 2020
+# November 20, 2020
 # INFO 201
 
 # Load the `dplyr` and `tidyr` libraries for data manipulation 
